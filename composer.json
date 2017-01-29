@@ -1,0 +1,12 @@
+{
+  "name": "cal7/trie",
+  "description": "A package to facilitate usage of the TRIE data structure",
+  "require": {
+    "php": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "cal7\\trie\\": "src/"
+    }
+  }
+}
