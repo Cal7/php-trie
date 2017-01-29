@@ -1,6 +1,6 @@
 <?php
 
-namespace cal7\trie\Node;
+namespace cal7\trie;
 
 class Node{
     private $character;

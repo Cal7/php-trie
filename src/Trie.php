@@ -1,6 +1,6 @@
 <?php
 
-namespace cal7\trie\Trie;
+namespace cal7\trie;
 
 use cal7\trie\Node;
 
