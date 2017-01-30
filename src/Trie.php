@@ -66,6 +66,14 @@ class Trie{
     }
 
     /**
+     * @return \cal7\trie\Node
+     */
+    public function getRoot()
+    {
+        return $this->root;
+    }
+
+    /**
      * Given a path to a file containing a list of words, each on a new line, this creates a new Trie instance from those words
      *
      * @param string $path
