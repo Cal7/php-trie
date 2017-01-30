@@ -30,10 +30,10 @@ class Node{
      * @param string $character
      * @param bool $isEndOfWord
      */
-    public function __construct(string $character, bool $isEndOfWord)
+    public function __construct(string $character, bool $endOfWord)
     {
         $this->character = $character;
-        $this->isEndOfWord = $isEndOfWord;
+        $this->endOfWord = $endOfWord;
     }
 
     /**
