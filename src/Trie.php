@@ -43,6 +43,19 @@ class Trie{
     }
 
     /**
+     * Inserts multiple words into this trie
+     *
+     * @param array $words
+     */
+    public function addWords(array $words)
+    {
+        foreach($words as $word)
+        {
+            $this->addWord($word);
+        }
+    }
+
+    /**
      * Returns whether or not $word is a valid word in this trie
      *
      * @param string $word
