@@ -41,4 +41,27 @@ class Trie{
             $currentNode = $currentNode->getChild($character);
         }
     }
+
+    /**
+     * Returns whether or not $word is a valid word in this trie
+     *
+     * @param string $word
+     * @return bool
+     */
+    public function hasWord(string $word)
+    {
+        $currentNode = $this->root;
+
+        foreach(str_split($word) as $character)
+        {
+            if(!$currentNode->hasChild($character))
+            {
+                return false;
+            }
+
+            $currentNode = $currentNode->getChild($character);
+        }
+
+        return $currentNode->isEndOfWord();
+    }
 }
