@@ -5,14 +5,27 @@ namespace cal7\trie;
 use cal7\trie\Node;
 
 class Trie{
+    /**
+     * The root node of the trie
+     *
+     * @var \cal7\trie\Node
+     */
     private $root;
 
+    /**
+     * Trie constructor.
+     */
     public function __construct()
     {
         $this->root = new Node("", false);
     }
 
-    public function addWord($word)
+    /**
+     * Inserts the given string into this trie
+     *
+     * @param string $word
+     */
+    public function addWord(string $word)
     {
         $currentNode = $this->root;
 
