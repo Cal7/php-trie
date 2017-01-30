@@ -44,6 +44,21 @@ class Node{
     }
 
     /**
+     * Calculates the string formed when one starts at the root of the trie and traverses downwards to this node
+     *
+     * @return string
+     */
+    public function pathFromRoot()
+    {
+        if(is_null($this->getParent()))
+        {
+            return $this->getCharacter();
+        }
+
+        return $this->getParent()->pathFromRoot() . $this->getCharacter();
+    }
+
+    /**
      * @return string
      */
     public function getCharacter()
