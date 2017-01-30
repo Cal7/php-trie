@@ -69,6 +69,8 @@ class Node{
     }
 
     /**
+     * Returns whether the path to this node from the trie's root forms a valid word
+     *
      * @return bool
      */
     public function isEndOfWord()
