@@ -11,4 +11,21 @@ class Trie{
     {
         $this->root = new Node("", false);
     }
+
+    public function addWord($word)
+    {
+        $currentNode = $this->root;
+
+        foreach(str_split($word) as $index => $character)
+        {
+            if(!$currentNode->hasChild($character))
+            {
+                $isEndOfWord = ($index === strlen($word) - 1);
+
+                $currentNode->addChild(new Node($character, $isEndOfWord));
+            }
+
+            $currentNode = $currentNode->getChild($character);
+        }
+    }
 }
