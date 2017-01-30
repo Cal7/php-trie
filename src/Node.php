@@ -25,6 +25,13 @@ class Node{
     private $children = [];
 
     /**
+     * The node that this instance is a child of
+     *
+     * @var Node
+     */
+    private $parent;
+
+    /**
      * Node constructor.
      *
      * @param string $character
@@ -44,6 +51,8 @@ class Node{
     public function addChild(Node $node)
     {
         $this->children[$node->character] = $node;
+
+        $node->setParent($this);
     }
 
     /**
@@ -55,6 +64,14 @@ class Node{
     public function hasChild(string $character)
     {
         return array_key_exists($character, $this->children);
+    }
+
+    /**
+     * @return string
+     */
+    public function getCharacter()
+    {
+        return $this->character;
     }
 
     /**
@@ -86,5 +103,21 @@ class Node{
     public function getChildren()
     {
         return $this->children;
+    }
+
+    /**
+     * @return Node
+     */
+    public function getParent()
+    {
+        return $this->parent;
+    }
+
+    /**
+     * @param Node $parent
+     */
+    public function setParent(Node $parent)
+    {
+        $this->parent = $parent;
     }
 }
