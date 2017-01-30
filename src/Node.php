@@ -15,7 +15,7 @@ class Node{
      *
      * @var bool
      */
-    private $isEndOfWord;
+    private $endOfWord;
 
     /**
      * This node's children
@@ -66,5 +66,13 @@ class Node{
     public function getChild(string $character)
     {
         return $this->children[$character];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isEndOfWord()
+    {
+        return $this->endOfWord;
     }
 }
