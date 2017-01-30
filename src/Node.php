@@ -69,6 +69,14 @@ class Node{
     }
 
     /**
+     * @return bool
+     */
+    public function isEndOfWord()
+    {
+        return $this->endOfWord;
+    }
+
+    /**
      * Returns an array of this node's child nodes
      *
      * @return array
@@ -76,13 +84,5 @@ class Node{
     public function getChildren()
     {
         return $this->children;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isEndOfWord()
-    {
-        return $this->endOfWord;
     }
 }
