@@ -44,45 +44,11 @@ class Node{
     }
 
     /**
-     * Adds $node to this node's list of children
-     *
-     * @param Node $node
-     */
-    public function addChild(Node $node)
-    {
-        $this->children[$node->character] = $node;
-
-        $node->setParent($this);
-    }
-
-    /**
-     * Returns whether or not this node has $character as a child
-     *
-     * @param string $character
-     * @return bool
-     */
-    public function hasChild(string $character)
-    {
-        return array_key_exists($character, $this->children);
-    }
-
-    /**
      * @return string
      */
     public function getCharacter()
     {
         return $this->character;
-    }
-
-    /**
-     * Returns the child node identified by $character
-     *
-     * @param string $character
-     * @return Node
-     */
-    public function getChild(string $character)
-    {
-        return $this->children[$character];
     }
 
     /**
@@ -103,6 +69,40 @@ class Node{
     public function getChildren()
     {
         return $this->children;
+    }
+
+    /**
+     * Returns the child node identified by $character
+     *
+     * @param string $character
+     * @return Node
+     */
+    public function getChild(string $character)
+    {
+        return $this->children[$character];
+    }
+
+    /**
+     * Returns whether or not this node has $character as a child
+     *
+     * @param string $character
+     * @return bool
+     */
+    public function hasChild(string $character)
+    {
+        return array_key_exists($character, $this->children);
+    }
+
+    /**
+     * Adds $node to this node's list of children
+     *
+     * @param Node $node
+     */
+    public function addChild(Node $node)
+    {
+        $this->children[$node->character] = $node;
+
+        $node->setParent($this);
     }
 
     /**
