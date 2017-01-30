@@ -64,4 +64,24 @@ class Trie{
 
         return $currentNode->isEndOfWord();
     }
+
+    /**
+     * Given a path to a file containing a list of words, each on a new line, this creates a new Trie instance from those words
+     *
+     * @param string $path
+     * @return Trie
+     */
+    public static function fromTextFile(string $path)
+    {
+        $trie = new Trie();
+
+        $handle = fopen($path, "r");
+        while(($word = fgets($handle)) !== false)
+        {
+            $trie->addWord($word);
+        }
+        fclose($handle);
+
+        return $trie;
+    }
 }
