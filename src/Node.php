@@ -79,7 +79,7 @@ class Node{
                     $words[] = $child->pathFromRoot();
                 }
 
-                //We now recursively search $child, by either removing its letter from $letters, or by decreasing $wildCard (whichever is applicable)
+                //We now recursively search $child, by either removing its letter from $letters, or by decreasing $wildcardCount (whichever is applicable)
                 if(in_array($child->getCharacter(), $letters))
                 {
                     $newLetters = $letters;
