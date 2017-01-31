@@ -27,6 +27,8 @@ class Trie{
      */
     public function addWord(string $word)
     {
+        $word = trim($word); //If generating from a text file, $word may contain hidden newline characters etc.
+
         $currentNode = $this->root;
 
         foreach(str_split($word) as $index => $character)
