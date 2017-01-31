@@ -79,6 +79,18 @@ class Trie{
     }
 
     /**
+     * Given a list of letters, and the number of wildcards/blanks, search this trie for words that can be formed
+     *
+     * @param array $letters
+     * @param int $wildcardCount
+     * @return array
+     */
+    public function findWords(array $letters, int $wildcardCount)
+    {
+        return $this->getRoot()->findWords($letters, $wildcardCount);
+    }
+
+    /**
      * @return \cal7\trie\Node
      */
     public function getRoot()

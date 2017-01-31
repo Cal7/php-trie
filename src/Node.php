@@ -59,6 +59,45 @@ class Node{
     }
 
     /**
+     * Given a list of letters, and the number of wildcards/blanks, search all descendants of this node for words that can be formed
+     *
+     * @param array $letters
+     * @param int $wildcardCount
+     * @return array
+     */
+    public function findWords(array $letters, int $wildcardCount)
+    {
+        $words = [];
+
+        foreach($this->getChildren() as $child)
+        {
+            //If $child is a node whose character is not in $letters, nor are there any wildcards, then there is no point traversing it
+            if(in_array($child->getCharacter(), $letters)  ||  $wildcardCount >= 1)
+            {
+                if($child->isEndOfWord())
+                {
+                    $words[] = $child->pathFromRoot();
+                }
+
+                //We now recursively search $child, by either removing its letter from $letters, or by decreasing $wildCard (whichever is applicable)
+                if(in_array($child->getCharacter(), $letters))
+                {
+                    $newLetters = $letters;
+                    unset($newLetters[array_search($child->getCharacter(), $newLetters)]);
+
+                    $words = array_merge($words, $child->findWords($newLetters, $wildcardCount));
+                }
+                else
+                {
+                    $words = array_merge($words, $child->findWords($letters, $wildcardCount - 1));
+                }
+            }
+        }
+
+        return $words;
+    }
+
+    /**
      * @return string
      */
     public function getCharacter()
