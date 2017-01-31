@@ -6,9 +6,11 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/cal7/php-trie",
-  "authors": {
-    "name": "Callum Browne"
-  },
+  "authors": [
+    {
+      "name": "Callum Browne"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "cal7\\trie\\": "src/"
